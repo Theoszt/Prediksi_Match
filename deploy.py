@@ -160,6 +160,9 @@ teams = pd.concat([data_cleaned['HomeTeam'], data_cleaned['AwayTeam']]).unique()
 standings = pd.DataFrame(teams, columns=['Team'])
 
 standings['PL'] = 0
+standings['W'] = 0
+standings['D'] = 0
+standings['L'] = 0
 standings['+'] = 0
 standings['-'] = 0
 standings['GD'] = 0
@@ -167,6 +170,7 @@ standings['PTS'] = 0
 standings['Form'] = ''
 logos = {team: get_image_as_base64(path) for team, path in team_images.items()}
 standings['Logo'] = standings['Team'].map(logos)
+
 for _, match in data_cleaned.iterrows():
     home_team = match['HomeTeam']
     away_team = match['AwayTeam']
@@ -184,15 +188,21 @@ for _, match in data_cleaned.iterrows():
 
     if result == 'H':
         standings.loc[standings['Team'] == home_team, 'PTS'] += 3
+        standings.loc[standings['Team'] == home_team, 'W'] += 1
+        standings.loc[standings['Team'] == away_team, 'L'] += 1
         standings.loc[standings['Team'] == home_team, 'Form'] += 'W'
         standings.loc[standings['Team'] == away_team, 'Form'] += 'L'
     elif result == 'A':
         standings.loc[standings['Team'] == away_team, 'PTS'] += 3
+        standings.loc[standings['Team'] == away_team, 'W'] += 1
+        standings.loc[standings['Team'] == home_team, 'L'] += 1
         standings.loc[standings['Team'] == away_team, 'Form'] += 'W'
         standings.loc[standings['Team'] == home_team, 'Form'] += 'L'
     elif result == 'D':
         standings.loc[standings['Team'] == home_team, 'PTS'] += 1
         standings.loc[standings['Team'] == away_team, 'PTS'] += 1
+        standings.loc[standings['Team'] == home_team, 'D'] += 1
+        standings.loc[standings['Team'] == away_team, 'D'] += 1
         standings.loc[standings['Team'] == home_team, 'Form'] += 'D'
         standings.loc[standings['Team'] == away_team, 'Form'] += 'D'
 
@@ -361,7 +371,7 @@ def fitur():
     return jadwal_besok
 
 def model():
-    standard=joblib.load(r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Integrasi\standard_scal_rendra.joblib')
+    standard=joblib.load(r'standard_scal_rendra.joblib')
     isi_fitur=fitur()
     model=joblib.load(r'model_rendra.joblib')
     feature_columns = [
