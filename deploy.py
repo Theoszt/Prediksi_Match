@@ -8,29 +8,30 @@ from RandomForest import random_forest_baru,decisiontreebaru
 
 
 team_images = {
-    'Ath Bilbao': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Ath Bilbao.png',
-    'Betis': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Betis.png',
-    'Celta': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Celta.png',
-    'Las Palmas': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Las Palmas.png',
-    'Osasuna': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Osasuna.png',
-    'Valencia': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Valencia.png',
-    'Sociedad': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Sociedad.png',
-    'Mallorca': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Mallorca.png',
-    'Valladolid': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Valladolid.png',
-    'Villarreal': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Villarreal.png',
-    'Sevilla': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Sevilla.png',
-    'Barcelona': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Barcelona.png',
-    'Espanol': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Espanol.png',
-    'Getafe': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Getafe.png',
-    'Real Madrid': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Real Madrid.png',
-    'Leganes': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Leganes.png',
-    'Alaves': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Alaves.png',
-    'Ath Madrid': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Ath Madrid.png',
-    'Vallecano': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Vallecano.png',
-    'Girona': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Girona.png',
-    'Cadiz': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Cadiz.png',
-    'Granada': r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Gambar\Granada.png'
+    'Ath Bilbao': r'Gambar\Ath Bilbao.png',
+    'Betis': r'Gambar\Betis.png',
+    'Celta': r'Gambar\Celta.png',
+    'Las Palmas': r'Gambar\Las Palmas.png',
+    'Osasuna': r'Gambar\Osasuna.png',
+    'Valencia': r'Gambar\Valencia.png',
+    'Sociedad': r'Gambar\Sociedad.png',
+    'Mallorca': r'Gambar\Mallorca.png',
+    'Valladolid': r'Gambar\Valladolid.png',
+    'Villarreal': r'Gambar\Villarreal.png',
+    'Sevilla': r'Gambar\Sevilla.png',
+    'Barcelona': r'Gambar\Barcelona.png',
+    'Espanol': r'Gambar\Espanol.png',
+    'Getafe': r'Gambar\Getafe.png',
+    'Real Madrid': r'Gambar\Real Madrid.png',
+    'Leganes': r'Gambar\Leganes.png',
+    'Alaves': r'Gambar\Alaves.png',
+    'Ath Madrid': r'Gambar\Ath Madrid.png',
+    'Vallecano': r'Gambar\Vallecano.png',
+    'Girona': r'Gambar\Girona.png',
+    'Cadiz': r'Gambar\Cadiz.png',
+    'Granada': r'Gambar\Granada.png'
 }
+
 def get_image_as_base64(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode('utf-8')
