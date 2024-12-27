@@ -38,7 +38,7 @@ def get_image_as_base64(image_path):
     with open(full_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode('utf-8')
 
-la_liga_logo_base64 = get_image_as_base64('Gambar/87.png')
+la_liga_logo_base64 = get_image_as_base64(r'Gambar/87.png')
 
 
 st.set_page_config(page_title='FotMob Clone', layout='wide')
