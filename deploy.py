@@ -139,7 +139,7 @@ st.markdown(f"""
 # Load and Process Data
 @st.cache_data
 def load_data():
-    data = pd.read_csv(r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\data matches\SP1 (14).csv')
+    data = pd.read_csv(r'SP1 (14).csv')
     data['Date'] = pd.to_datetime(data['Date'], format='%d/%m/%Y')
     data_cleaned = data.drop(['B365H', 'B365D', 'B365A', 'BWH', 'BWD', 'BWA', 'BFH', 'BFD', 'BFA', 'PSH', 'PSD', 'PSA',
         'WHH', 'WHD', 'WHA', '1XBH', '1XBD', '1XBA', 'MaxH', 'MaxD', 'MaxA', 'AvgH', 'AvgD', 'AvgA',
@@ -216,7 +216,7 @@ standings_html = standings_html.replace('<th>Logo</th>', '<th></th>')
 def load_yang_akan_datang():
     
     
-    jadwal_path = r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\la_liga_matches_updated.csv'
+    jadwal_path = r'la_liga_matches_updated.csv'
     jadwal_pertandingan_df = pd.read_csv(jadwal_path)
 
     # Convert the 'date' column to datetime and extract the date part
@@ -228,7 +228,7 @@ def load_yang_akan_datang():
 
 
 def load_sudah_terjadi():
-    data = pd.read_csv(r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\data matches\SP1 (14).csv')
+    data = pd.read_csv(r'SP1 (14).csv')
     # data = pd.read_csv(r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Laliga_2011-2025.csv')
     # Memilih kolom yang diperlukan
     selected_columns = data[['Date', 'Time', 'HomeTeam', 'AwayTeam', 'FTHG', 'FTAG', 'FTR']]
@@ -237,7 +237,7 @@ def load_sudah_terjadi():
 
 
 def fitur():
-    data = pd.read_csv(r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\data matches\SP1 (14).csv')
+    data = pd.read_csv(r'SP1 (14).csv')
 
     data['Date'] = pd.to_datetime(data['Date'], format='%d/%m/%Y')
     data = data.sort_values(by='Date')
@@ -341,7 +341,7 @@ def fitur():
     ]
 
     # Load jadwal pertandingan
-    jadwal_path = r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\la_liga_matches_updated.csv'
+    jadwal_path = r'la_liga_matches_updated.csv'
     jadwal_pertandingan_df = pd.read_csv(jadwal_path)
 
     # Convert the 'date' column to datetime and extract the date part
@@ -363,7 +363,7 @@ def fitur():
 def model():
     standard=joblib.load(r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Integrasi\standard_scal_rendra.joblib')
     isi_fitur=fitur()
-    model=joblib.load(r'C:\Users\Theopan gerard\OneDrive\Documents\Kecerdasan Ai\Integrasi\model_rendra.joblib')
+    model=joblib.load(r'model_rendra.joblib')
     feature_columns = [
         'home_wins_home', 'home_draws_home', 'home_losses_home', 
         'home_FTHG_home', 'home_FTAG_home', 'home_HTHG_home', 
