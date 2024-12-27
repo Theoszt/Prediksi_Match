@@ -8,36 +8,37 @@ from RandomForest import random_forest_baru,decisiontreebaru
 import os
 
 team_images = {
-    'Ath Bilbao': r'Gambar\Ath Bilbao.png',
-    'Betis': r'Gambar\Betis.png',
-    'Celta': r'Gambar\Celta.png',
-    'Las Palmas': r'Gambar\Las Palmas.png',
-    'Osasuna': r'Gambar\Osasuna.png',
-    'Valencia': r'Gambar\Valencia.png',
-    'Sociedad': r'Gambar\Sociedad.png',
-    'Mallorca': r'Gambar\Mallorca.png',
-    'Valladolid': r'Gambar\Valladolid.png',
-    'Villarreal': r'Gambar\Villarreal.png',
-    'Sevilla': r'Gambar\Sevilla.png',
-    'Barcelona': r'Gambar\Barcelona.png',
-    'Espanol': r'Gambar\Espanol.png',
-    'Getafe': r'Gambar\Getafe.png',
-    'Real Madrid': r'Gambar\Real Madrid.png',
-    'Leganes': r'Gambar\Leganes.png',
-    'Alaves': r'Gambar\Alaves.png',
-    'Ath Madrid': r'Gambar\Ath Madrid.png',
-    'Vallecano': r'Gambar\Vallecano.png',
-    'Girona': r'Gambar\Girona.png',
-    'Cadiz': r'Gambar\Cadiz.png',
-    'Granada': r'Gambar\Granada.png'
+    'Ath Bilbao': r'Gambar/Ath Bilbao.png',
+    'Betis': r'Gambar/Betis.png',
+    'Celta': r'Gambar/Celta.png',
+    'Las Palmas': r'Gambar/Las Palmas.png',
+    'Osasuna': r'Gambar/Osasuna.png',
+    'Valencia': r'Gambar/Valencia.png',
+    'Sociedad': r'Gambar/Sociedad.png',
+    'Mallorca': r'Gambar/Mallorca.png',
+    'Valladolid': r'Gambar/Valladolid.png',
+    'Villarreal': r'Gambar/Villarreal.png',
+    'Sevilla': r'Gambar/Sevilla.png',
+    'Barcelona': r'Gambar/Barcelona.png',
+    'Espanol': r'Gambar/Espanol.png',
+    'Getafe': r'Gambar/Getafe.png',
+    'Real Madrid': r'Gambar/Real Madrid.png',
+    'Leganes': r'Gambar/Leganes.png',
+    'Alaves': r'Gambar/Alaves.png',
+    'Ath Madrid': r'Gambar/Ath Madrid.png',
+    'Vallecano': r'Gambar/Vallecano.png',
+    'Girona': r'Gambar/Girona.png',
+    'Cadiz': r'Gambar/Cadiz.png',
+    'Granada': r'Gambar/Granada.png'
 }
+
 
 def get_image_as_base64(image_path):
     full_path = os.path.join(os.getcwd(), image_path)
     with open(full_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode('utf-8')
 
-la_liga_logo_base64 = get_image_as_base64('Gambar/87.png')
+la_liga_logo_base64 = get_image_as_base64(r'Gambar/87.png')
 
 
 st.set_page_config(page_title='FotMob Clone', layout='wide')
