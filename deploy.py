@@ -5,7 +5,7 @@ import base64
 import joblib
 import numpy as np
 from RandomForest import random_forest_baru,decisiontreebaru
-
+import os
 
 team_images = {
     'Ath Bilbao': r'Gambar\Ath Bilbao.png',
@@ -33,8 +33,12 @@ team_images = {
 }
 
 def get_image_as_base64(image_path):
-    with open(image_path, "rb") as img_file:
+    full_path = os.path.join(os.getcwd(), image_path)
+    with open(full_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode('utf-8')
+
+la_liga_logo_base64 = get_image_as_base64('Gambar/87.png')
+
 
 st.set_page_config(page_title='FotMob Clone', layout='wide')
 st.markdown("""
