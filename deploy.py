@@ -34,7 +34,15 @@ team_images = {
 
 
 def get_image_as_base64(image_path):
+    # Get the absolute path to the image
     full_path = os.path.join(os.getcwd(), image_path)
+    
+    # Check if the file exists at the specified path
+    if not os.path.exists(full_path):
+        print(f"Error: The file at {full_path} was not found.")
+        return None
+    
+    # Open and read the image file as binary, then encode it as base64
     with open(full_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode('utf-8')
 
